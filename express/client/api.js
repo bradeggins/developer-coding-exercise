@@ -5,3 +5,9 @@ export const getPosts = () => {
       .get('/posts')
       .then(res => res.body)
 }
+
+export const getPostDetails = (slug) => {
+    return request
+     .get(`/post/${slug}`)
+     .then(res => res.body)
+}

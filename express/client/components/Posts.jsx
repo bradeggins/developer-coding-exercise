@@ -11,11 +11,11 @@ useEffect(() => {
         setPosts(data))
 }, [])
 
-console.log(posts);
+
 return (
     <>
     <h1>Posts</h1>
-    {posts.map((post, i) => <h3><Link key={i} to={post.slug}>{post.title}</Link></h3>)}
+    {posts.map((post, i) => <h3 key={i}><Link to={`/post/${post.slug}`}>{post.title}</Link></h3>)}
     </>
 )
 

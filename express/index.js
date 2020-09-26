@@ -19,6 +19,7 @@ app.use(express.static('public'))
  */
 app.get('/post/:slug', function (req, res) {
   // ... fill in your own code ...
+  console.log(req.params.slug);
 })
 
 /**
