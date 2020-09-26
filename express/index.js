@@ -1,7 +1,9 @@
 const express = require('express')
 const { getTopWords } = require('./utils/tags')
+const { getPostNames, formatSlugPostName } = require('./utils/posts')
 const app = express()
 const rootPostDir = './server/assets/posts'
+
 
 app.use(express.json())
 app.use(express.static('public'))
@@ -30,7 +32,9 @@ app.get('/post/:slug', function (req, res) {
  * ]
  */
 app.get('/posts', function (req, res) {
-  // ... fill in you own code ...
+    const postNames = getPostNames()
+    const posts = formatSlugPostName(postNames)
+  res.json(posts) 
 })
 
 app.listen(3000, function () {
