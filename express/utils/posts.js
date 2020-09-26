@@ -24,7 +24,15 @@ function formatSlugPostName(postNames){
     })
 }
 
+function formatPostContents(slug){
+    const fileName = `${slug}.md`
+    const post = getPost(fileName)
+    const paragraphs = post.split('\n')
+    return paragraphs
+}
+
 module.exports = {
     getPostNames,
-    formatSlugPostName
+    formatSlugPostName,
+    formatPostContents
 }

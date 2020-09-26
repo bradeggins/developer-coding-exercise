@@ -4,20 +4,20 @@ import { getPosts } from '../api'
 
 const Posts = (props) => {
 
-const [ posts, setPosts ] = useState([])
-useEffect(() => {
-    getPosts()
-    .then(data =>
-        setPosts(data))
-}, [])
+    const [ posts, setPosts ] = useState([])
+    useEffect(() => {
+        getPosts()
+        .then(data =>
+            setPosts(data))
+    }, [])
 
 
-return (
-    <>
-    <h1>Posts</h1>
-    {posts.map((post, i) => <h3 key={i}><Link to={`/post/${post.slug}`}>{post.title}</Link></h3>)}
-    </>
-)
+    return (
+        <>
+        <h1>Posts</h1>
+        {posts.map((post, i) => <h3 key={i}><Link to={`/post/${post.slug}`}>{post.title}</Link></h3>)}
+        </>
+    )
 
 }
 

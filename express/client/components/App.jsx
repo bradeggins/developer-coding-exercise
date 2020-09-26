@@ -6,7 +6,7 @@ import Post from './Post'
 const App = () => {
   return (
     <>
-    <Route path='/' component={ Posts} />
+    <Route exact path='/' component={ Posts} />
     <Route exact path='/post/:slug' component= { Post } />
     </>
   )

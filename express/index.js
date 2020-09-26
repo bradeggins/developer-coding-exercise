@@ -1,6 +1,6 @@
 const express = require('express')
 const { getTopWords } = require('./utils/tags')
-const { getPostNames, formatSlugPostName } = require('./utils/posts')
+const { getPostNames, formatSlugPostName, formatPostContents } = require('./utils/posts')
 const app = express()
 const rootPostDir = './server/assets/posts'
 
@@ -18,8 +18,12 @@ app.use(express.static('public'))
  * }
  */
 app.get('/post/:slug', function (req, res) {
-  // ... fill in your own code ...
-  console.log(req.params.slug);
+
+  const { slug } = req.params
+  const post = {
+    content: formatPostContents(slug)
+  }
+  res.json({post})
 })
 
 /**
