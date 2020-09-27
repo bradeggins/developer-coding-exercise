@@ -12,6 +12,7 @@ const Post = (props) => {
         })
     }, [])
 
+    // TODO Format posts correctly filter out titles and other sections
     return (
         <>
         {(!post) ? null : post.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
