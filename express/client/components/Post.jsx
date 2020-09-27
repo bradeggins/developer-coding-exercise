@@ -12,7 +12,6 @@ const Post = (props) => {
         })
     }, [])
 
-    console.log(post);
     return (
         <>
         {(!post) ? null : post.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
